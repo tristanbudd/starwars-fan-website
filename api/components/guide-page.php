@@ -1,5 +1,5 @@
 <?php
-require_once(__DIR__ . '/connection.php');
+require_once($_SERVER["DOCUMENT_ROOT"] . "/api/components/connection.php");
 
 $currentPage = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 if ($currentPage < 1) $currentPage = 1;

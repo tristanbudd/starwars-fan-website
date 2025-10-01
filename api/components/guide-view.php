@@ -1,6 +1,6 @@
 <?php
-require(__DIR__ . '/../vendor/autoload.php');
-require_once(__DIR__ . '/connection.php');
+require_once($_SERVER["DOCUMENT_ROOT"] . "/vendor/autoload.php");
+require_once($_SERVER["DOCUMENT_ROOT"] . "/api/components/connection.php");
 
 if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
     header('Location: guides.php?page=1');

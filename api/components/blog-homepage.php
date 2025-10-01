@@ -1,5 +1,5 @@
 <?php
-require_once(__DIR__ . '/connection.php');
+require_once($_SERVER["DOCUMENT_ROOT"] . "/api/components/connection.php");
 
 function truncate($string, $length) {
     if (strlen($string) <= $length) {

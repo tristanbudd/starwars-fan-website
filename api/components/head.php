@@ -37,10 +37,10 @@ date_default_timezone_set('Europe/London');
     <meta name="robots" content="index, follow">
 
     <!-- Favicon & App Icons -->
-    <link rel="icon" type="image/png" href="/public/img/favicon/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="/public/img/favicon/favicon.svg" />
-    <link rel="shortcut icon" href="/public/img/favicon/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/public/img/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" href="<?php echo(get_document_path('img/favicon', true) . '/favicon-96x96.png'); ?>" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="<?php echo(get_document_path('img/favicon', true) . '/favicon.svg'); ?>" />
+    <link rel="shortcut icon" href="<?php echo(get_document_path('img/favicon', true) . '/favicon.ico'); ?>" />
+    <link rel="apple-touch-icon" sizes="180x180" href="<?php echo(get_document_path('img/favicon', true) . '/apple-touch-icon.png'); ?>" />
     <meta name="apple-mobile-web-app-title" content="Star Wars" />
 
     <!-- Opengraph Meta Tags -->
@@ -50,7 +50,7 @@ date_default_timezone_set('Europe/London');
     <meta property="og:description" content="<?php echo($pageDescription); ?>">
     <meta property="og:image" content="<?php
     $scheme = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
-    echo($scheme . '://' . $_SERVER['HTTP_HOST'] . '/img/banner-opengraph.png');
+    echo($scheme . '://' . $_SERVER['HTTP_HOST'] . get_document_path('img/banner-opengraph.png', true));
     ?>">
 
     <!-- Twitter Meta Tags -->
@@ -61,7 +61,7 @@ date_default_timezone_set('Europe/London');
     <meta name="twitter:description" content="<?php echo($pageDescription); ?>">
     <meta name="twitter:image" content="<?php
     $scheme = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
-    echo($scheme . '://' . $_SERVER['HTTP_HOST'] . '/img/banner-opengraph.png');
+    echo($scheme . '://' . $_SERVER['HTTP_HOST'] . get_document_path('img/banner-opengraph.png', true));
     ?>">
 
     <!-- Preload override.css -->

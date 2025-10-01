@@ -19,10 +19,10 @@ function getDocumentPath(pathType = "", component = false) {
     if (isRunningLocally) {
         path = "../" + pathType;
     } else {
-        path = "";
-
         if (component) {
-            path = window.location.origin + "/public";
+            path = window.location.origin + "/public" + (pathType ? "/" + pathType : "");
+        } else {
+            path = pathType;
         }
     }
 

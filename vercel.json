@@ -10,6 +10,10 @@
       "dest": "/api/$1.php"
     },
     {
+      "src": "^/([a-zA-Z0-9_-]+)\\.php$",
+      "dest": "/api/components/$1.php"
+    },
+    {
       "src": "^/$",
       "dest": "/api/index.php"
     },

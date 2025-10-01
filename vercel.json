@@ -5,6 +5,15 @@
       "includeFiles": "vendor/**"
     }
   },
+  "builds": [
+    {
+      "src": "composer.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "vendor"
+      }
+    }
+  ],
   "routes": [
     {
       "src": "^/([a-zA-Z0-9_-]+)\\.php$",

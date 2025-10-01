@@ -63,7 +63,7 @@ session_start();
 
             <?php include('components/footer.php'); ?>
 
-            <script src="js/script.min.js"></script>
+            <script src="../public/js/script.min.js"></script>
         </div>
     </body>
 </html>

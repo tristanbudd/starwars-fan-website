@@ -27,26 +27,24 @@ session_start();
                     <picture>
                         <source
                             srcset="
-                                img/banner-741x300.webp 741w,
-                                img/banner-1297x525.webp 1297w,
-                                img/banner-1482x600.webp 1482w,
-                                img/banner-1730x700.webp 1730w,
-                                img/banner-2048x829.webp 2048w,
-                                img/banner-2223x900.webp 2223w,
+                                ../public/img/banner-741x300.webp 741w,
+                         public/img    img/banner-1297x525.webp 1297w,
+                  public/img           img/banner-1482x600.webp 1482w,
+           public/img                  img/banner-1730x700.webp 1730w,
+    public/img                         img/banner-2048x829.webp 2048public/img                                img/banner-2223x900.wepublic/img2223w,
                                 img/banner-2560x1036.webp 2560w
                             "
                             type="image/webp"
                             sizes="(min-width: 1840px) 1731px, (min-width: 800px) calc(91.18vw + 72px), 716px"
                         >
                         <img
-                            src="img/banner-1297x525.webp"
+                            src="../public/img/banner-1297x525.webp"
                             srcset="
-                                img/banner-741x300.webp 741w,
-                                img/banner-1297x525.webp 1297w,
-                                img/banner-1482x600.webp 1482w,
-                                img/banner-1730x700.webp 1730w,
-                                img/banner-2048x829.webp 2048w,
-                                img/banner-2223x900.webp 2223w,
+                                ../public/img/banner-741x300.webp 741w,
+                         public/img    img/banner-1297x525.webp 1297w,
+                  public/img           img/banner-1482x600.webp 1482w,
+           public/img                  img/banner-1730x700.webp 1730w,
+    public/img                         img/banner-2048x829.webp 2048public/img                                img/banner-2223x900.wepublic/img2223w,
                                 img/banner-2560x1036.webp 2560w
                             "
                             sizes="(min-width: 1840px) 1731px, (min-width: 800px) calc(91.18vw + 72px), 716px"
@@ -119,19 +117,19 @@ session_start();
                                 <picture>
                                     <source
                                         srcset="
-                                            img/discord-logo-320.webp 320w,
-                                            img/discord-logo-640.webp 640w,
-                                            img/discord-logo-960.webp 960w
+                                            ../public/img/discord-logo-320.webp 320w,
+                                     public/img    img/discord-logo-640.webp 640w,
+                              public/img           img/discord-logo-960.webp 960w
                                         "
                                         type="image/webp"
                                         sizes="(min-width: 440px) 375px, 89.17vw"
                                     >
                                     <img
-                                        src="img/discord-logo-640.webp"
+                                        src="../public/img/discord-logo-640.webp"
                                         srcset="
-                                            img/discord-logo-320.webp 320w,
-                                            img/discord-logo-640.webp 640w,
-                                            img/discord-logo-960.webp 960w
+                                            ../public/img/discord-logo-320.webp 320w,
+                                     public/img    img/discord-logo-640.webp 640w,
+                              public/img           img/discord-logo-960.webp 960w
                                         "
                                         sizes="(min-width: 440px) 375px, 89.17vw"
                                         alt="Discord Logo"
@@ -154,7 +152,7 @@ session_start();
 
             <?php include('components/footer.php'); ?>
 
-            <script src="js/script.min.js"></script>
+            <script src="../public/js/script.min.js"></script>
         </div>
     </body>
 </html>

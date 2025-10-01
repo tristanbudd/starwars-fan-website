@@ -26,6 +26,12 @@ session_start();
                 <?php
                 if (isset($_GET['id']) && is_numeric($_GET['id'])) {
                     echo('<div class="guide-view-container container" id="guide-view-content">');
+                        if (isset($_GET['id']) && is_numeric($_GET['id']) && $_GET['id'] > 0) {
+                            $guide_id = intval($_GET['id']);
+                            include($_SERVER["DOCUMENT_ROOT"] . "/api/components/guide-view.php?id=$guide_id");
+                        } else {
+                            echo('<h2 class="blog-article-error">Invalid Article ID.</h2>');
+                        }
                     echo('</div>');
 
                     echo('<div class="guide-return">');
@@ -38,6 +44,12 @@ session_start();
                     echo('</div>');
 
                     echo('<div class="guide-page-container container" id="guide-page-content">');
+                        $page_number = 1;
+                        if (isset($_GET['page']) && is_numeric($_GET['page']) && $_GET['page'] > 0) {
+                            $page_number = intval($_GET['page']);
+                        }
+
+                        include($_SERVER["DOCUMENT_ROOT"] . "/api/components/guide-page.php?page=$page_number");
                     echo('</div>');
                 }
                 ?>

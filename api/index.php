@@ -62,7 +62,9 @@ session_start();
                         <h2>News & Updates</h2>
                     </div>
 
-                    <div id="page-news-updates-loader"></div>
+                    <div id="page-news-updates-loader">
+                        <?php include($_SERVER["DOCUMENT_ROOT"] . "/api/components/blog-homepage.php"); ?>
+                    </div>
 
                     <div class="page-news-updates-view-all">
                         <a href="blog" class="page-news-updates-view-all-link">

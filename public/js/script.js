@@ -1,35 +1,4 @@
 /**
- * Gets the path (part of Vercel Integration), allows for local development also.
- *
- * @param pathType
- * @param component
- * @returns {string}
- */
-function getDocumentPath(pathType = "", component = false) {
-    const host = window.location.hostname;
-
-    const isRunningLocally =
-        host === "localhost" ||
-        host === "0.0.0.0" ||
-        host === "[::1]" ||
-        host.startsWith("127.");
-
-    let path = "";
-
-    if (isRunningLocally) {
-        path = "../" + pathType;
-    } else {
-        if (component) {
-            path = window.location.origin + "/public" + (pathType ? "/" + pathType : "");
-        } else {
-            path = pathType;
-        }
-    }
-
-    return path;
-}
-
-/**
  * Truncates a string to a specified length and appends an ellipsis if it exceeds that length.
  *
  * @param {string} str - The string to truncate.
@@ -95,6 +64,7 @@ function loadDiscordWidgets() {
     const widgetDiscordAPI = "https://discord.com/api/guilds/228406572756369408/widget.json";
 
     if (!widgetDiscordTitle || !widgetDiscordPlayerCount || !widgetDiscordServerID || !widgetDiscordUserList || !widgetDiscordJoinName) {
+        disableLoader()
         return;
     }
 
@@ -164,148 +134,6 @@ function loadDiscordWidgets() {
 }
 
 document.addEventListener("DOMContentLoaded", loadDiscordWidgets);
-
-document.addEventListener("DOMContentLoaded", function() {
-    // Applied only to: index.php
-    const page_news_updates_loader = document.getElementById("page-news-updates-loader");
-
-    if (page_news_updates_loader) {
-        fetch(getDocumentPath("public", true) + "/components/blog-homepage.php")
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok: ' + response.statusText);
-                }
-                return response.text();
-
-            })
-            .then(html => {
-                page_news_updates_loader.innerHTML = html;
-            })
-            .catch(error => {
-                page_news_updates_loader.innerHTML = "<div class=\"page-news-updates-content\"><h2>Unable To Fetch Latest Article :(</h2></div>";
-                console.error('Error | Fetch error: ', error);
-            })
-            .finally(() => {
-                disableLoader();
-            });
-    }
-
-    // Applied only to: blog.php
-    const blog_page_content = document.getElementById("blog-page-content");
-
-    if (blog_page_content) {
-        const urlParams = new URLSearchParams(window.location.search);
-        const currentPage = urlParams.get('page') || 1;
-
-        fetch(getDocumentPath("public", true) + `/components/blog-page.php?page=${currentPage}`)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok: ' + response.statusText);
-                }
-                return response.text();
-            })
-            .then(html => {
-                blog_page_content.innerHTML = html;
-            })
-            .catch(error => {
-                blog_page_content.innerHTML = `<h2>Unable To Fetch Articles :(</h2>`;
-                console.error('Error | Fetch error: ', error);
-            })
-            .finally(() => {
-                disableLoader();
-            });
-    }
-
-    // Applied only to: blog-view.php
-    const blog_view_content = document.getElementById("blog-view-content");
-
-    if (blog_view_content) {
-        const urlParams = new URLSearchParams(window.location.search);
-        const articleID = urlParams.get('id');
-
-        if (!articleID) {
-            blog_view_content.innerHTML = "<h2>Article Not Found :(</h2>";
-            disableLoader();
-            return;
-        }
-
-        fetch(getDocumentPath("public", true) + `/components/blog-view.php?id=${articleID}`)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok: ' + response.statusText);
-                }
-                return response.text();
-            })
-            .then(html => {
-                blog_view_content.innerHTML = html;
-            })
-            .catch(error => {
-                blog_view_content.innerHTML = `<h2>Unable To Fetch Article :(</h2>`;
-                console.error('Error | Fetch error: ', error);
-            })
-            .finally(() => {
-                disableLoader();
-            });
-    }
-
-    // Applies only to: guides.php
-    const guide_page_content = document.getElementById("guide-page-content");
-
-    if (guide_page_content) {
-        const urlParams = new URLSearchParams(window.location.search);
-        const currentPage = urlParams.get('page') || 1;
-
-        fetch(getDocumentPath("public", true) + `/components/guide-page.php?page=${currentPage}`)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok: ' + response.statusText);
-                }
-                return response.text();
-            })
-            .then(html => {
-                guide_page_content.innerHTML = html;
-            })
-            .catch(error => {
-                guide_page_content.innerHTML = `<h2>Unable To Fetch Guides :(</h2>`;
-                console.error('Error | Fetch error: ', error);
-            })
-            .finally(() => {
-                disableLoader();
-            });
-    }
-
-    // Applies only to guide-view.php
-    const guide_view_content = document.getElementById("guide-view-content");
-
-    if (guide_view_content) {
-        const urlParams = new URLSearchParams(window.location.search);
-        const guideID = urlParams.get('id');
-
-        if (!guideID) {
-            guide_view_content.innerHTML = "<h2>Guide Not Found :(</h2>";
-            disableLoader();
-            return;
-        }
-
-        fetch(getDocumentPath("public", true) + `/components/guide-view.php?id=${guideID}`)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok: ' + response.statusText);
-                }
-                return response.text();
-            })
-            .then(html => {
-                guide_view_content.innerHTML = html;
-            })
-            .catch(error => {
-                guide_view_content.innerHTML = `<h2>Unable To Fetch Guide :(</h2>`;
-                console.error('Error | Fetch error: ', error);
-            })
-            .finally(() => {
-                disableLoader();
-            });
-    }
-});
 
 /* Cookie Consent Notice */
 function loadGA() {

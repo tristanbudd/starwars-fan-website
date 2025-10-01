@@ -1,4 +1,35 @@
 /**
+ * Gets the path (part of Vercel Integration), allows for local development also.
+ *
+ * @param pathType
+ * @param component
+ * @returns {string}
+ */
+function getDocumentPath(pathType = "", component = false) {
+    const host = window.location.hostname;
+
+    const isRunningLocally =
+        host === "localhost" ||
+        host === "0.0.0.0" ||
+        host === "[::1]" ||
+        host.startsWith("127.");
+
+    let path = "";
+
+    if (isRunningLocally) {
+        path = "../" + pathType;
+    } else {
+        path = "";
+
+        if (component) {
+            path = window.location.origin + "/public";
+        }
+    }
+
+    return path;
+}
+
+/**
  * Truncates a string to a specified length and appends an ellipsis if it exceeds that length.
  *
  * @param {string} str - The string to truncate.
@@ -139,7 +170,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const page_news_updates_loader = document.getElementById("page-news-updates-loader");
 
     if (page_news_updates_loader) {
-        fetch('components/blog-homepage.php')
+        fetch(getDocumentPath("public", true) + "/components/blog-homepage.php")
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok: ' + response.statusText);
@@ -166,7 +197,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const urlParams = new URLSearchParams(window.location.search);
         const currentPage = urlParams.get('page') || 1;
 
-        fetch(`components/blog-page.php?page=${currentPage}`)
+        fetch(getDocumentPath("public", true) + `/components/blog-page.php?page=${currentPage}`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok: ' + response.statusText);
@@ -198,7 +229,7 @@ document.addEventListener("DOMContentLoaded", function() {
             return;
         }
 
-        fetch(`components/blog-view.php?id=${articleID}`)
+        fetch(getDocumentPath("public", true) + `/components/blog-view.php?id=${articleID}`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok: ' + response.statusText);
@@ -224,7 +255,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const urlParams = new URLSearchParams(window.location.search);
         const currentPage = urlParams.get('page') || 1;
 
-        fetch(`components/guide-page.php?page=${currentPage}`)
+        fetch(getDocumentPath("public", true) + `/components/guide-page.php?page=${currentPage}`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok: ' + response.statusText);
@@ -256,7 +287,7 @@ document.addEventListener("DOMContentLoaded", function() {
             return;
         }
 
-        fetch(`components/guide-view.php?id=${guideID}`)
+        fetch(getDocumentPath("public", true) + `/components/guide-view.php?id=${guideID}`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok: ' + response.statusText);

@@ -1,17 +1,14 @@
 {
   "functions": {
     "api/*.php": {
-      "runtime": "vercel-php@0.7.3"
+      "runtime": "vercel-php@0.7.3",
+      "includeFiles": "vendor/**"
     }
   },
   "routes": [
     {
       "src": "^/([a-zA-Z0-9_-]+)\\.php$",
       "dest": "/api/$1.php"
-    },
-    {
-      "src": "^/components/(.*)$",
-      "dest": "/includes/components/$1"
     },
     {
       "src": "^/$",

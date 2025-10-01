@@ -2,6 +2,21 @@
 if (!isset($pageTitle)) $pageTitle = "Unknown";
 if (!isset($pageDescription)) $pageDescription = "";
 if (!isset($pageKeywords)) $pageKeywords = "";
+function get_document_path($path_type="", $component=false) {
+    $is_running_locally = !(strpos($_SERVER["HTTP_HOST"], "localhost") === false);
+
+    if ($is_running_locally) {
+        $path = "../" . $path_type;
+    } else {
+        $path = "";
+
+        if ($component) {
+            $path = $_SERVER["DOCUMENT_ROOT"] . "/public";
+        }
+    }
+
+    return $path;
+}
 
 // Set the default timezone of the website.
 date_default_timezone_set('Europe/London');
@@ -50,12 +65,12 @@ date_default_timezone_set('Europe/London');
     ?>">
 
     <!-- Preload override.css -->
-    <link rel="preload" href="css/override.min.css" as="style" onload="this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="css/override.min.css"></noscript>
+    <link rel="preload" href="<?php echo(get_document_path("public") . "/css/override.css") ?>" as="style" onload="this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="<?php echo(get_document_path("public") . "/css/override.css") ?>"></noscript>
 
     <!-- Preload Main CSS -->
-    <link rel="preload" href="css/style.min.css" as="style" onload="this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="css/style.min.css"></noscript>
+    <link rel="preload" href="<?php echo(get_document_path("public") . "/css/style.css") ?>" as="style" onload="this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="<?php echo(get_document_path("public") . "/css/style.css") ?>"></noscript>
 
     <!-- DNS Prefetch: resolves domain name early -->
     <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">

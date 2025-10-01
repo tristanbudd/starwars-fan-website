@@ -1,7 +1,7 @@
 <?php
 require(__DIR__ . '/../vendor/autoload.php');
 
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/sw-galaxies-website/');
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/starwars-website/');
 $dotenv->load();
 
 $host = $_ENV['MYSQL_HOST'] ?? 'localhost';

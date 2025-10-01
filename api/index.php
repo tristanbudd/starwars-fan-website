@@ -8,18 +8,18 @@ session_start();
     $pageTitle = "Home";
     $pageDescription = "";
     $pageKeywords = "";
-    include('components/head.php');
+    include($_SERVER["DOCUMENT_ROOT"] . "/api/components/head.php");
 
     if (file_exists('maintenance.txt')) {
-        include('components/maintenance.php');
+        include($_SERVER["DOCUMENT_ROOT"] . "/api/components/maintenance.php");
         exit();
     }
     ?>
 
     <body id="body">
-        <?php include('components/loader.php'); ?>
-        <?php include('components/cookie-notice.php'); ?>
-        <?php include('components/header.php'); ?>
+        <?php include($_SERVER["DOCUMENT_ROOT"] . "/api/components/loader.php"); ?>
+        <?php include($_SERVER["DOCUMENT_ROOT"] . "/api/components/cookie-notice.php"); ?>
+        <?php include($_SERVER["DOCUMENT_ROOT"] . "/api/components/header.php"); ?>
 
         <div class="page">
             <div id="page-content">
@@ -150,9 +150,9 @@ session_start();
                 </section>
             </div>
 
-            <?php include('components/footer.php'); ?>
+            <?php include($_SERVER["DOCUMENT_ROOT"] . "/api/components/footer.php"); ?>
 
-            <script src="../public/js/script.min.js"></script>
+            <script type="text/javascript" rel="javascript" src="<?php echo(get_document_path("public") . "/js/script.min.js") ?>"></script>
         </div>
     </body>
 </html>

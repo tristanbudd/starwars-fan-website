@@ -42,7 +42,9 @@ echo '<table border="1"><tr>
 </tr>';
 $catStmt = $pdo->prepare("SELECT article_category_name FROM article_categories WHERE article_category_id = ?");
 foreach ($articles as $article) {
-    $img = $article['article_showcase_image'] ?: '../img/no-image-provided.webp';
+    $img = $article['article_showcase_image']
+        ? $article['article_showcase_image']
+        : get_document_path('public') . '/img/no-image-provided.webp';
     $date = date('M jS, Y', strtotime($article['article_date']));
     $catStmt->execute([$article['article_category']]);
     $cat = $catStmt->fetch(PDO::FETCH_ASSOC);
@@ -80,7 +82,9 @@ echo '<table border="1"><tr>
     <th>ID</th><th>Title</th><th>Image</th><th>Content</th><th>Edit</th><th>Delete</th>
 </tr>';
 foreach ($guides as $guide) {
-    $img = $guide['guide_showcase_image'] ?: '../img/no-image-provided-square.webp';
+    $img = $guide['guide_showcase_image']
+        ? $guide['guide_showcase_image']
+        : get_document_path('public') . '/img/no-image-provided-square.webp';
     echo '<tr>
         <td>'.$guide['guide_id'].'</td>
         <td>'.$guide['guide_title'].'</td>

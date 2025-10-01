@@ -29,7 +29,9 @@ try {
 
         foreach ($guideList as $guide) {
             $guideTitle = $guide['guide_title'];
-            $guideImage = $guide['guide_showcase_image'] ?: '../img/no-image-provided-square.webp';
+            $guideImage = $guide['guide_showcase_image']
+                ? $guide['guide_showcase_image']
+                : get_document_path('public') . '/img/no-image-provided-square.webp';
             $guideLink = "guides.php?id=" . $guide['guide_id'];
 
             echo('<a href="' . $guideLink . '" class="guide-page-container-inner-item">');

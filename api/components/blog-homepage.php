@@ -28,7 +28,7 @@ try {
         $articleTitle = htmlspecialchars($latestArticle['article_title']);
         $articleImage = htmlspecialchars($latestArticle['article_showcase_image']);
         if (empty($articleImage)) {
-            $articleImage = '../img/no-image-provided.webp';
+            $articleImage = get_document_path('public') . '/img/no-image-provided.webp';
         }
         $articleContent = htmlspecialchars($latestArticle['article_content']);
         $articleDate = date('M jS, Y', strtotime($latestArticle['article_date']));

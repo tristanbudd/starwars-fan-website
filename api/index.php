@@ -26,31 +26,33 @@ session_start();
                 <section class="page-hero">
                     <picture>
                         <source
-                            srcset="
-                                ../public/img/banner-741x300.webp 741w,
-                         public/img    img/banner-1297x525.webp 1297w,
-                  public/img           img/banner-1482x600.webp 1482w,
-           public/img                  img/banner-1730x700.webp 1730w,
-    public/img                         img/banner-2048x829.webp 2048public/img                                img/banner-2223x900.wepublic/img2223w,
-                                img/banner-2560x1036.webp 2560w
-                            "
-                            type="image/webp"
-                            sizes="(min-width: 1840px) 1731px, (min-width: 800px) calc(91.18vw + 72px), 716px"
-                        >
+                                srcset="
+        <?php echo(get_document_path('public') . '/img/banner-741x300.webp') ?> 741w,
+        <?php echo(get_document_path('public') . '/img/banner-1297x525.webp') ?> 1297w,
+        <?php echo(get_document_path('public') . '/img/banner-1482x600.webp') ?> 1482w,
+        <?php echo(get_document_path('public') . '/img/banner-1730x700.webp') ?> 1730w,
+        <?php echo(get_document_path('public') . '/img/banner-2048x829.webp') ?> 2048w,
+        <?php echo(get_document_path('public') . '/img/banner-2223x900.webp') ?> 2223w,
+        <?php echo(get_document_path('public') . '/img/banner-2560x1036.webp') ?> 2560w
+    "
+                                type="image/webp"
+                                sizes="(min-width: 1840px) 1731px, (min-width: 800px) calc(91.18vw + 72px), 716px"
+                        />
                         <img
-                            src="../public/img/banner-1297x525.webp"
-                            srcset="
-                                ../public/img/banner-741x300.webp 741w,
-                         public/img    img/banner-1297x525.webp 1297w,
-                  public/img           img/banner-1482x600.webp 1482w,
-           public/img                  img/banner-1730x700.webp 1730w,
-    public/img                         img/banner-2048x829.webp 2048public/img                                img/banner-2223x900.wepublic/img2223w,
-                                img/banner-2560x1036.webp 2560w
-                            "
-                            sizes="(min-width: 1840px) 1731px, (min-width: 800px) calc(91.18vw + 72px), 716px"
-                            alt="Main Page Banner"
-                            class="page-hero-image"
-                        >
+                                src="<?php echo(get_document_path("public") . "/img/banner-1297x525.webp") ?>"
+                                srcset="
+        <?php echo(get_document_path("public") . "/img/banner-741x300.webp") ?> 741w,
+        <?php echo(get_document_path("public") . "/img/banner-1297x525.webp") ?> 1297w,
+        <?php echo(get_document_path("public") . "/img/banner-1482x600.webp") ?> 1482w,
+        <?php echo(get_document_path("public") . "/img/banner-1730x700.webp") ?> 1730w,
+        <?php echo(get_document_path("public") . "/img/banner-2048x829.webp") ?> 2048w,
+        <?php echo(get_document_path("public") . "/img/banner-2223x900.webp") ?> 2223w,
+        <?php echo(get_document_path("public") . "/img/banner-2560x1036.webp") ?> 2560w
+    "
+                                sizes="(min-width: 1840px) 1731px, (min-width: 800px) calc(91.18vw + 72px), 716px"
+                                alt="Main Page Banner"
+                                class="page-hero-image"
+                        />
                     </picture>
                 </section>
 
@@ -116,24 +118,24 @@ session_start();
                             <div class="page-discord-container-image">
                                 <picture>
                                     <source
-                                        srcset="
-                                            ../public/img/discord-logo-320.webp 320w,
-                                     public/img    img/discord-logo-640.webp 640w,
-                              public/img           img/discord-logo-960.webp 960w
-                                        "
-                                        type="image/webp"
-                                        sizes="(min-width: 440px) 375px, 89.17vw"
+                                            srcset="
+            <?php echo(get_document_path('public') . '/img/discord-logo-320.webp') ?> 320w,
+            <?php echo(get_document_path('public') . '/img/discord-logo-640.webp') ?> 640w,
+            <?php echo(get_document_path('public') . '/img/discord-logo-960.webp') ?> 960w
+        "
+                                            type="image/webp"
+                                            sizes="(min-width: 440px) 375px, 89.17vw"
                                     >
                                     <img
-                                        src="../public/img/discord-logo-640.webp"
-                                        srcset="
-                                            ../public/img/discord-logo-320.webp 320w,
-                                     public/img    img/discord-logo-640.webp 640w,
-                              public/img           img/discord-logo-960.webp 960w
-                                        "
-                                        sizes="(min-width: 440px) 375px, 89.17vw"
-                                        alt="Discord Logo"
-                                        class="page-discord-image"
+                                            src="<?php echo(get_document_path('public') . '/img/discord-logo-640.webp') ?>"
+                                            srcset="
+            <?php echo(get_document_path('public') . '/img/discord-logo-320.webp') ?> 320w,
+            <?php echo(get_document_path('public') . '/img/discord-logo-640.webp') ?> 640w,
+            <?php echo(get_document_path('public') . '/img/discord-logo-960.webp') ?> 960w
+        "
+                                            sizes="(min-width: 440px) 375px, 89.17vw"
+                                            alt="Discord Logo"
+                                            class="page-discord-image"
                                     >
                                 </picture>
                             </div>

@@ -34,7 +34,9 @@ try {
 
         foreach ($articleList as $article) {
             $articleTitle = $article['article_title'];
-            $articleImage = $article['article_showcase_image'] ?: '../img/no-image-provided.webp';
+            $articleImage = $article['article_showcase_image']
+                ? $article['article_showcase_image']
+                : get_document_path('public') . '/img/no-image-provided.webp';
             $articleContent = $article['article_content'];
             $articleDate = date('M jS, Y', strtotime($article['article_date']));
             $articleCategoryId = $article['article_category'];

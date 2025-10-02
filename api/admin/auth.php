@@ -3,11 +3,14 @@ session_start();
 
 $error = '';
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $key = trim($_POST['auth_key'] ?? '');
+$env_key = getenv('SECRET_KEY') ?: '';
 
-    if (preg_match('/^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$/i', $key)) {
-        $_SESSION['SECRET_KEY'] = $key;
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $input_key = trim($_POST['auth_key'] ?? '');
+
+    if ($input_key === $env_key) {
+        $_SESSION['SECRET_KEY'] = $input_key;
+
         header('Location: admin.php');
         exit;
     } else {

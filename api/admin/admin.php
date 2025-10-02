@@ -21,8 +21,6 @@ function get_document_path($path_type="", $component=false): string
 
 $secret_key = getenv('SECRET_KEY') ?: '';
 
-var_dump($_SESSION['SECRET_KEY'], getenv('SECRET_KEY'));
-
 if (empty($_SESSION['SECRET_KEY']) || $_SESSION['SECRET_KEY'] !== $secret_key) {
     echo '<h2>Authentication Failed</h2>';
     echo '<a href="auth.php">Authenticate</a>';

@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $input_key = trim($_POST['auth_key'] ?? '');
 
     if ($input_key === $env_key) {
-        $_SESSION['SECRET_KEY'] = $input_key;
+        setcookie('SECRET_KEY', $input_key, time() + 3600, "/", "", false, true);
 
         header('Location: admin.php');
         exit;

@@ -2,6 +2,7 @@
 if (!isset($pageTitle)) $pageTitle = "Unknown";
 if (!isset($pageDescription)) $pageDescription = "";
 if (!isset($pageKeywords)) $pageKeywords = "";
+
 function get_document_path($path_type="", $component=false): string
 {
     $is_running_locally = !(strpos($_SERVER["HTTP_HOST"], "localhost") === false);

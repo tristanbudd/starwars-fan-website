@@ -2,10 +2,11 @@
 require_once(__DIR__ . '/../../components/connection.php');
 session_start();
 
-$secret_key = getenv('SECRET_KEY') ?? '';
-if ($_SESSION['SECRET_KEY'] != $secret_key) {
-    echo('<h2>Authentication Failed</h2>');
-    echo('<a href="auth.php">Authenticate</a>');
+$secret_key = getenv('SECRET_KEY') ?: '';
+
+if (empty($_SESSION['SECRET_KEY']) || $_SESSION['SECRET_KEY'] !== $secret_key) {
+    echo '<h2>Authentication Failed</h2>';
+    echo '<a href="auth.php">Authenticate</a>';
     exit;
 }
 

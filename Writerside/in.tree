@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE instance-profile
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/product-profile.dtd">
+
+<instance-profile id="in"
+                  name="StarWars Fan Website Documentation" start-page="README.md">
+
+    <toc-element topic="README.md"/>
+    <toc-element toc-title="vendor">
+        <toc-element toc-title="erusev">
+            <toc-element toc-title="parsedown">
+                <toc-element topic="parsedown_README.md"/>
+            </toc-element>
+            <toc-element toc-title="parsedown-extra">
+                <toc-element topic="parsedown-extra_README.md"/>
+                <toc-element toc-title="test">
+                    <toc-element toc-title="data">
+                        <toc-element topic="special_attributes.md"/>
+                        <toc-element topic="markdown_inside_markup.md"/>
+                        <toc-element topic="footnote.md"/>
+                        <toc-element topic="definition_list.md"/>
+                        <toc-element topic="compound_footnote.md"/>
+                        <toc-element topic="abbreviation.md"/>
+                    </toc-element>
+                </toc-element>
+            </toc-element>
+        </toc-element>
+        <toc-element toc-title="symfony">
+            <toc-element toc-title="polyfill-ctype">
+                <toc-element topic="polyfill-ctype_README.md"/>
+            </toc-element>
+            <toc-element toc-title="polyfill-mbstring">
+                <toc-element topic="polyfill-mbstring_README.md"/>
+            </toc-element>
+            <toc-element toc-title="polyfill-php80">
+                <toc-element topic="polyfill-php80_README.md"/>
+            </toc-element>
+        </toc-element>
+    </toc-element>
+</instance-profile>

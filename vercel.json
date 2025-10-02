@@ -27,7 +27,7 @@
       "dest": "/api/admin/$1.php"
     },
     {
-      "src": "^/admin/([a-zA-Z0-9_-]+)\\.php$",
+      "src": "^/admin/actions/([a-zA-Z0-9_-]+)\\.php$",
       "dest": "/api/admin/actions/$1.php"
     },
     {

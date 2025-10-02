@@ -2,6 +2,23 @@
 require_once(__DIR__ . '/../components/connection.php');
 session_start();
 
+function get_document_path($path_type="", $component=false): string
+{
+    $is_running_locally = !(strpos($_SERVER["HTTP_HOST"], "localhost") === false);
+
+    if ($is_running_locally) {
+        $path = "../" . $path_type;
+    } else {
+        $path = "";
+
+        if ($component) {
+            $path = $_SERVER["DOCUMENT_ROOT"] . "/public";
+        }
+    }
+
+    return $path;
+}
+
 global $dbName;
 $dbName = $dbName ?? 'starwars_website';
 $pdo = getPDO($dbName) ?: exit('DB connection failed');

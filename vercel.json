@@ -3,6 +3,10 @@
     "api/*.php": {
       "runtime": "vercel-php@0.7.3",
       "includeFiles": "vendor/**"
+    },
+    "api/admin/*.php": {
+      "runtime": "vercel-php@0.7.3",
+      "includeFiles": "vendor/**"
     }
   },
   "routes": [
@@ -11,16 +15,16 @@
       "dest": "/api/$1.php"
     },
     {
-      "src": "^/$",
-      "dest": "/api/index.php"
+      "src": "^/admin\\.php$",
+      "dest": "/api/admin/admin.php"
     },
     {
-      "src": "^/([a-zA-Z0-9_-]+)\\.php$",
+      "src": "^/admin/([a-zA-Z0-9_-]+)\\.php$",
       "dest": "/api/admin/$1.php"
     },
     {
       "src": "^/$",
-      "dest": "/admin/admin.php"
+      "dest": "/api/index.php"
     },
     {
       "src": "^/css/(.*)$",

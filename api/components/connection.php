@@ -1,7 +1,9 @@
 <?php
 require_once($_SERVER["DOCUMENT_ROOT"] . "/vendor/autoload.php");
 
-$dotenv = Dotenv\Dotenv::createImmutable($_SERVER['DOCUMENT_ROOT']);
+use Dotenv\Dotenv;
+
+$dotenv = Dotenv\Dotenv::createImmutable($_SERVER['DOCUMENT_ROOT'] . "/");
 $dotenv->load();
 
 $host = $_ENV['MYSQL_HOST'] ?? 'localhost';

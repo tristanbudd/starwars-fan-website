@@ -29,7 +29,7 @@ session_start();
                         if (isset($_GET['id']) && is_numeric($_GET['id']) && $_GET['id'] > 0) {
                             $article_id = intval($_GET['id']);
 
-                            require_once($_SERVER["DOCUMENT_ROOT"] . "/api/components/blog-view.php?id=$article_id");
+                            include($_SERVER["DOCUMENT_ROOT"] . "/api/components/blog-view.php?id=$article_id");
                         } else {
                             echo('<h2 class="blog-article-error">Invalid Article ID.</h2>');
                         }
@@ -50,7 +50,7 @@ session_start();
                             $page_number = intval($_GET['page']);
                         }
 
-                        require_once($_SERVER["DOCUMENT_ROOT"] . "/api/components/blog-page.php?page=$page_number");
+                    include($_SERVER["DOCUMENT_ROOT"] . "/api/components/blog-page.php?page=$page_number");
                     echo('</div>');
                 }
                 ?>

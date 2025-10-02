@@ -1,15 +1,10 @@
 <?php
 require_once($_SERVER["DOCUMENT_ROOT"] . "/vendor/autoload.php");
 
-use Dotenv\Dotenv;
-
-$dotenv = Dotenv\Dotenv::createImmutable($_SERVER['DOCUMENT_ROOT'] . "/");
-$dotenv->load();
-
-$host = $_ENV['MYSQL_HOST'] ?? 'localhost';
-$username = $_ENV['MYSQL_USERNAME'] ?? 'root';
-$password = $_ENV['MYSQL_PASSWORD'] ?? '';
-$dbName = $_ENV['MYSQL_DATABASE'] ?? 'starwars_website';
+$host = getenv('MYSQL_HOST') ?? 'localhost';
+$username = getenv('MYSQL_USERNAME') ?? 'root';
+$password = getenv('MYSQL_PASSWORD') ?? '';
+$dbName = getenv('MYSQL_DATABASE') ?? 'starwars_website';
 
 function getPDO($db = null) {
     global $host, $username, $password;

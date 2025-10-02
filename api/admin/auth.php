@@ -28,3 +28,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <input type="text" id="auth_key" name="auth_key" required>
     <button type="submit">Submit</button>
 </form>
+
+<footer>
+    <hr>
+    <p><strong>Cookie Policy:</strong>
+        This site uses a temporary authentication cookie to maintain your session.
+        It expires automatically after logout or inactivity.
+        No personal data, tracking, or analytics cookies are stored.</p>
+</footer>

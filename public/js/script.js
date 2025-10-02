@@ -72,7 +72,7 @@ function loadDiscordWidgets() {
         .then(response => response.json())
         .then(data => {
             widgetDiscordTitle.textContent = `| ${data.name ?? "Unknown Server"}`;
-            widgetDiscordPlayerCount.textContent = `| Members Online: ${data.presence_count ?? "N/A"}`;
+            widgetDiscordPlayerCount.textContent = `| Members Online: ${data.presence_count?.toLocaleString() ?? "N/A"}`;
             widgetDiscordServerID.textContent = `| Server ID: ${data.id ?? "N/A"}`;
             widgetDiscordJoinName.textContent = `Join ${data.name ?? "Server"}`;
 
@@ -85,7 +85,7 @@ function loadDiscordWidgets() {
                 let membersToShow = data.members;
 
                 if (totalMembers > maxDisplayUsers) {
-                    widgetDiscordMemberList.textContent = `Member List: (Showing: ${maxDisplayUsers} of ${totalMembers})`;
+                    widgetDiscordMemberList.textContent = `Member List: (Showing: ${maxDisplayUsers})`;
                     const shuffled = data.members.sort(() => 0.5 - Math.random());
                     membersToShow = shuffled.slice(0, maxDisplayUsers);
                 }

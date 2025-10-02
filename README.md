@@ -24,6 +24,8 @@ The platform is fully responsive for all devices, integrates with the Discord AP
 ## Preview Images
 Below are examples showcasing different sections of the website:
 
+<img width="638" height="784" alt="Home Page" src="https://github.com/user-attachments/assets/b0bddbbd-5f7e-4ad4-b22a-2281af26feda" />
+
 ---
 
 ## Installation / Setup

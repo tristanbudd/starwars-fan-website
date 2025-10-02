@@ -24,7 +24,23 @@ The platform is fully responsive for all devices, integrates with the Discord AP
 ## Preview Images
 Below are examples showcasing different sections of the website:
 
-<img width="638" height="784" alt="Home Page" src="https://github.com/user-attachments/assets/b0bddbbd-5f7e-4ad4-b22a-2281af26feda" />
+### Home Page
+<img width="1920" height="2369" alt="Home Page" src="https://github.com/user-attachments/assets/ba99334d-adff-41d3-a600-b7111a0b103e" />
+
+### Blog Page
+<img width="1920" height="1078" alt="Blog Page" src="https://github.com/user-attachments/assets/03b16fb6-fbbb-4b0e-a0da-3dd7df63a66f" />
+
+### Viewing Blog
+<img width="1920" height="4856" alt="Viewing Blog" src="https://github.com/user-attachments/assets/bb96561e-8269-4d27-97c3-524a3753a34b" />
+
+### Guides Page
+<img width="1920" height="945" alt="Guides Page" src="https://github.com/user-attachments/assets/8413e3f9-5b03-477b-b124-4e5bf7a0c9be" />
+
+### Viewing Guide
+<img width="1920" height="5864" alt="Viewing Guide" src="https://github.com/user-attachments/assets/083fd63b-a916-48bf-a713-82d2be944776" />
+
+### Discord Page
+<img width="1920" height="945" alt="Discord Page" src="https://github.com/user-attachments/assets/6996226e-b82a-4e52-bdef-3e95505dac1c" />
 
 ---
 

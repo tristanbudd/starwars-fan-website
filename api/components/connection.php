@@ -1,5 +1,5 @@
 <?php
-require_once($_SERVER["DOCUMENT_ROOT"] . "/api/vendor/autoload.php");
+require_once($_SERVER["DOCUMENT_ROOT"] . "/vendor/autoload.php");
 
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/starwars-website/');
 $dotenv->load();

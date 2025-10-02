@@ -27,9 +27,7 @@ session_start();
                 if (isset($_GET['id']) && is_numeric($_GET['id'])) {
                     echo('<div class="blog-view-container container" id="blog-view-content">');
                         if (isset($_GET['id']) && is_numeric($_GET['id']) && $_GET['id'] > 0) {
-                            $article_id = intval($_GET['id']);
-
-                            include($_SERVER["DOCUMENT_ROOT"] . "/api/components/blog-view.php?id=$article_id");
+                            include($_SERVER["DOCUMENT_ROOT"] . "/api/components/blog-view.php");
                         } else {
                             echo('<h2 class="blog-article-error">Invalid Article ID.</h2>');
                         }
@@ -45,12 +43,11 @@ session_start();
                     echo('</div>');
 
                     echo('<div class="blog-page-container container" id="blog-page-content">');
-                        $page_number = 1;
-                        if (isset($_GET['page']) && is_numeric($_GET['page']) && $_GET['page'] > 0) {
-                            $page_number = intval($_GET['page']);
+                        if (!isset($_GET['page']) || !is_numeric($_GET['page']) || $_GET['page'] <= 0) {
+                            $_GET['page'] = 1;
                         }
 
-                    include($_SERVER["DOCUMENT_ROOT"] . "/api/components/blog-page.php?page=$page_number");
+                        include($_SERVER["DOCUMENT_ROOT"] . "/api/components/blog-page.php");
                     echo('</div>');
                 }
                 ?>

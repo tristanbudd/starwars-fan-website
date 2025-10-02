@@ -7,6 +7,10 @@
     "api/admin/*.php": {
       "runtime": "vercel-php@0.7.3",
       "includeFiles": "vendor/**"
+    },
+    "api/admin/actions/*.php": {
+      "runtime": "vercel-php@0.7.3",
+      "includeFiles": "vendor/**"
     }
   },
   "routes": [
@@ -21,6 +25,10 @@
     {
       "src": "^/admin/([a-zA-Z0-9_-]+)\\.php$",
       "dest": "/api/admin/$1.php"
+    },
+    {
+      "src": "^/admin/([a-zA-Z0-9_-]+)\\.php$",
+      "dest": "/api/admin/actions/$1.php"
     },
     {
       "src": "^/$",

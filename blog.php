@@ -8,18 +8,18 @@ session_start();
     $pageTitle = "Blog";
     $pageDescription = "";
     $pageKeywords = "";
-    include($_SERVER["DOCUMENT_ROOT"] . "/api/components/head.php");
+    include($_SERVER["DOCUMENT_ROOT"] . "/components/head.php");
 
     if (file_exists('maintenance.txt')) {
-        include($_SERVER["DOCUMENT_ROOT"] . "/api/components/maintenance.php");
+        include($_SERVER["DOCUMENT_ROOT"] . "/components/maintenance.php");
         exit();
     }
     ?>
 
     <body id="body">
-        <?php include($_SERVER["DOCUMENT_ROOT"] . "/api/components/loader.php"); ?>
-        <?php include($_SERVER["DOCUMENT_ROOT"] . "/api/components/cookie-notice.php"); ?>
-        <?php include($_SERVER["DOCUMENT_ROOT"] . "/api/components/header.php"); ?>
+        <?php include($_SERVER["DOCUMENT_ROOT"] . "/components/loader.php"); ?>
+        <?php include($_SERVER["DOCUMENT_ROOT"] . "/components/cookie-notice.php"); ?>
+        <?php include($_SERVER["DOCUMENT_ROOT"] . "/components/header.php"); ?>
 
         <div class="page">
             <div id="page-content">
@@ -27,7 +27,7 @@ session_start();
                 if (isset($_GET['id']) && is_numeric($_GET['id'])) {
                     echo('<div class="blog-view-container container" id="blog-view-content">');
                         if (isset($_GET['id']) && is_numeric($_GET['id']) && $_GET['id'] > 0) {
-                            include($_SERVER["DOCUMENT_ROOT"] . "/api/components/blog-view.php");
+                            include($_SERVER["DOCUMENT_ROOT"] . "/components/blog-view.php");
                         } else {
                             echo('<h2 class="blog-article-error">Invalid Article ID.</h2>');
                         }
@@ -47,13 +47,13 @@ session_start();
                             $_GET['page'] = 1;
                         }
 
-                        include($_SERVER["DOCUMENT_ROOT"] . "/api/components/blog-page.php");
+                        include($_SERVER["DOCUMENT_ROOT"] . "/components/blog-page.php");
                     echo('</div>');
                 }
                 ?>
             </div>
 
-            <?php include($_SERVER["DOCUMENT_ROOT"] . "/api/components/footer.php"); ?>
+            <?php include($_SERVER["DOCUMENT_ROOT"] . "/components/footer.php"); ?>
 
             <script type="text/javascript" rel="javascript" src="<?php echo(get_document_path("public") . "/js/script.min.js") ?>"></script>
         </div>

@@ -1,6 +1,6 @@
 <?php
 require_once($_SERVER["DOCUMENT_ROOT"] . "/vendor/autoload.php");
-require_once($_SERVER["DOCUMENT_ROOT"] . "/api/components/connection.php");
+require_once($_SERVER["DOCUMENT_ROOT"] . "/components/connection.php");
 
 if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
     header('Location: blog.php?page=1');

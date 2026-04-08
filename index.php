@@ -8,18 +8,18 @@ session_start();
     $pageTitle = "Home";
     $pageDescription = "";
     $pageKeywords = "";
-    include($_SERVER["DOCUMENT_ROOT"] . "/api/components/head.php");
+    include($_SERVER["DOCUMENT_ROOT"] . "/components/head.php");
 
     if (file_exists('maintenance.txt')) {
-        include($_SERVER["DOCUMENT_ROOT"] . "/api/components/maintenance.php");
+        include($_SERVER["DOCUMENT_ROOT"] . "/components/maintenance.php");
         exit();
     }
     ?>
 
     <body id="body">
-        <?php include($_SERVER["DOCUMENT_ROOT"] . "/api/components/loader.php"); ?>
-        <?php include($_SERVER["DOCUMENT_ROOT"] . "/api/components/cookie-notice.php"); ?>
-        <?php include($_SERVER["DOCUMENT_ROOT"] . "/api/components/header.php"); ?>
+        <?php include($_SERVER["DOCUMENT_ROOT"] . "/components/loader.php"); ?>
+        <?php include($_SERVER["DOCUMENT_ROOT"] . "/components/cookie-notice.php"); ?>
+        <?php include($_SERVER["DOCUMENT_ROOT"] . "/components/header.php"); ?>
 
         <div class="page">
             <div id="page-content">
@@ -63,7 +63,7 @@ session_start();
                     </div>
 
                     <div id="page-news-updates-loader">
-                        <?php include($_SERVER["DOCUMENT_ROOT"] . "/api/components/blog-homepage.php"); ?>
+                        <?php include($_SERVER["DOCUMENT_ROOT"] . "/components/blog-homepage.php"); ?>
                     </div>
 
                     <div class="page-news-updates-view-all">
@@ -154,7 +154,7 @@ session_start();
                 </section>
             </div>
 
-            <?php include($_SERVER["DOCUMENT_ROOT"] . "/api/components/footer.php"); ?>
+            <?php include($_SERVER["DOCUMENT_ROOT"] . "/components/footer.php"); ?>
 
             <script type="text/javascript" rel="javascript" src="<?php echo(get_document_path("public") . "/js/script.min.js") ?>"></script>
         </div>

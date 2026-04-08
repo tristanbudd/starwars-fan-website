@@ -8,7 +8,7 @@ session_start();
     $pageTitle = "403";
     $pageDescription = "";
     $pageKeywords = "";
-    include($_SERVER["DOCUMENT_ROOT"] . "/api/components/head.php");
+    include($_SERVER["DOCUMENT_ROOT"] . "/components/head.php");
     ?>
 
     <body id="body">

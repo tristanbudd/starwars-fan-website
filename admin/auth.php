@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($input_key === $env_key) {
         setcookie('SECRET_KEY', $input_key, time() + 3600, "/", "", false, true);
 
-        header('Location: admin.php');
+        header('Location: admin/admin.php');
         exit;
     } else {
         $error = 'Invalid authentication key.';

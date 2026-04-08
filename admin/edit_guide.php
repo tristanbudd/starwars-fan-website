@@ -7,7 +7,7 @@ $cookie_key = $_COOKIE['SECRET_KEY'] ?? '';
 
 if ($cookie_key !== $secret_key) {
     echo '<h2>Authentication Failed</h2>';
-    echo '<a href="auth.php">Authenticate</a>';
+    echo '<a href="admin/auth.php">Authenticate</a>';
     exit;
 }
 
@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $stmt = $pdo->prepare("UPDATE guides SET guide_title = ?, guide_showcase_image = ?, guide_content = ? WHERE guide_id = ?");
     $stmt->execute([$title, $image, $content, $id]);
-    header('Location: admin.php');
+    header('Location: admin/admin.php');
     exit;
 }
 
@@ -54,4 +54,4 @@ if (!$guide) {
     Content: <textarea name="guide_content" required><?= htmlspecialchars($guide['guide_content']) ?></textarea><br>
     <button type="submit">Update</button>
 </form>
-<a href="admin.php">Back to Admin</a>
+<a href="admin/admin.php">Back to Admin</a>

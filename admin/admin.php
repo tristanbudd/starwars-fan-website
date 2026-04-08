@@ -24,7 +24,7 @@ $cookie_key = $_COOKIE['SECRET_KEY'] ?? '';
 
 if ($cookie_key !== $secret_key) {
     echo '<h2>Authentication Failed</h2>';
-    echo '<a href="auth.php">Authenticate</a>';
+    echo '<a href="admin/auth.php">Authenticate</a>';
     exit;
 }
 
@@ -47,14 +47,14 @@ foreach ($categories as $cat) {
         <td>'.$cat['article_category_id'].'</td>
         <td>'.$cat['article_category_name'].'</td>
         <td>'.$cat['article_category_colour'].'</td>
-        <td><a href="edit_category.php?id='.$cat['article_category_id'].'">Edit</a></td>
-        <td><a href="actions/delete_category.php?id='.$cat['article_category_id'].'">Delete</a></td>
+        <td><a href="admin/edit_category.php?id='.$cat['article_category_id'].'">Edit</a></td>
+        <td><a href="admin/actions/delete_category.php?id='.$cat['article_category_id'].'">Delete</a></td>
     </tr>';
 }
 echo '</table>';
 
 echo '<h3>Create Category</h3>
-<form method="post" action="actions/create_category.php">
+<form method="post" action="admin/actions/create_category.php">
     Name: <input name="article_category_name" required><br>
     Colour: <input name="article_category_colour" required><br>
     <button type="submit">Create Category</button>
@@ -82,14 +82,14 @@ foreach ($articles as $article) {
         <td>'.$article['article_content'].'</td>
         <td>'.$date.'</td>
         <td>'.$catName.'</td>
-        <td><a href="edit_article.php?id='.$article['article_id'].'">Edit</a></td>
-        <td><a href="actions/delete_article.php?id='.$article['article_id'].'">Delete</a></td>
+        <td><a href="admin/edit_article.php?id='.$article['article_id'].'">Edit</a></td>
+        <td><a href="admin/actions/delete_article.php?id='.$article['article_id'].'">Delete</a></td>
     </tr>';
 }
 echo '</table>';
 
 echo '<h3>Create Article</h3>
-<form method="post" action="actions/create_article.php" enctype="multipart/form-data">
+<form method="post" action="admin/actions/create_article.php" enctype="multipart/form-data">
     Title: <input name="article_title" required><br>
     Image URL: <input name="article_showcase_image"><br>
     Content: <textarea name="article_content" required></textarea><br>
@@ -116,14 +116,14 @@ foreach ($guides as $guide) {
         <td>'.$guide['guide_title'].'</td>
         <td><a href="'.$img.'" target="_blank"><img src="'.$img.'" width="50"></a></td>
         <td>'.$guide['guide_content'].'</td>
-        <td><a href="edit_guide.php?id='.$guide['guide_id'].'">Edit</a></td>
-        <td><a href="actions/delete_guide.php?id='.$guide['guide_id'].'">Delete</a></td>
+        <td><a href="admin/edit_guide.php?id='.$guide['guide_id'].'">Edit</a></td>
+        <td><a href="admin/actions/delete_guide.php?id='.$guide['guide_id'].'">Delete</a></td>
     </tr>';
 }
 echo '</table>';
 
 echo '<h3>Create Guide</h3>
-<form method="post" action="actions/create_guide.php" enctype="multipart/form-data">
+<form method="post" action="admin/actions/create_guide.php" enctype="multipart/form-data">
     Title: <input name="guide_title" required><br>
     Image URL: <input name="guide_showcase_image"><br>
     Content: <textarea name="guide_content" required></textarea><br>

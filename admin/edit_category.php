@@ -7,7 +7,7 @@ $cookie_key = $_COOKIE['SECRET_KEY'] ?? '';
 
 if ($cookie_key !== $secret_key) {
     echo '<h2>Authentication Failed</h2>';
-    echo '<a href="auth.php">Authenticate</a>';
+    echo '<a href="admin/auth.php">Authenticate</a>';
     exit;
 }
 
@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $stmt = $pdo->prepare("UPDATE article_categories SET article_category_name = ?, article_category_colour = ? WHERE article_category_id = ?");
     $stmt->execute([$name, $colour, $id]);
-    header('Location: admin.php');
+    header('Location: admin/admin.php');
     exit;
 }
 
@@ -53,4 +53,4 @@ if (!$category) {
     Colour: <input name="article_category_colour" value="<?= htmlspecialchars($category['article_category_colour']) ?>" required><br>
     <button type="submit">Update</button>
 </form>
-<a href="admin.php">Back to Admin</a>
+<a href="admin/admin.php">Back to Admin</a>

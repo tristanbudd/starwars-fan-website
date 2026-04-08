@@ -7,7 +7,7 @@ $cookie_key = $_COOKIE['SECRET_KEY'] ?? '';
 
 if ($cookie_key !== $secret_key) {
     echo '<h2>Authentication Failed</h2>';
-    echo '<a href="auth.php">Authenticate</a>';
+    echo '<a href="admin/auth.php">Authenticate</a>';
     exit;
 }
 
@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt = $pdo->prepare("UPDATE articles SET article_title = ?, article_showcase_image = ?, article_content = ?, article_category = ? WHERE article_id = ?");
     $stmt->execute([$title, $image, $content, $category, $id]);
 
-    header('Location: admin.php');
+    header('Location: admin/admin.php');
     exit;
 }
 
@@ -74,4 +74,4 @@ $categories = $pdo->query("SELECT * FROM article_categories ORDER BY article_cat
     </select><br>
     <button type="submit">Update</button>
 </form>
-<a href="admin.php">Back to Admin</a>
+<a href="admin/admin.php">Back to Admin</a>
